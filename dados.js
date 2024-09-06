@@ -1,7 +1,6 @@
 // const  { Language } = require('@google-cloud/language');
 import { GoogleGenerativeAI } from 'https://esm.run/@google/generative-ai';
 import { marked } from "https://cdn.jsdelivr.net/npm/marked/lib/marked.esm.js";
-import showndown from "  https://unpkg.com/showdown/dist/showdown.min.js";
 
 const API_KEY = "AIzaSyC0nbdIIqwxQi8MRuIuy-mo-eQS_NKcR7M";
 const genAI = new GoogleGenerativeAI(API_KEY);
@@ -59,10 +58,8 @@ async function run() {
     const resultado = await model.generateContent(prompt);
     const response = await resultado.response;
     const texto = response.text();
-    const showdown = require('showdown');
-    const converter = new showdown.Converter();
-    const textoHTML = converter.makeHtml(texto);
-    localStorage.setItem('resultados', JSON.stringify(textoHTML));
+;
+    localStorage.setItem('resultados', JSON.stringify(texto));
 }
 
 const botaoEnviar = document.querySelector(".finalizar");
