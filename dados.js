@@ -38,19 +38,6 @@ function getGostaDeMusica(){
 function geraPrompt(){
     getDados();
     const musica = getGostaDeMusica();
-    console.log("Gere uma trilha e uma rotina de aprendizados para " 
-        + dadosPrimeiroFormulario.nomeUsuario + ", que quer aprender " 
-        + dadosPrimeiroFormulario.oqueAprender + " em " 
-        + dadosPrimeiroFormulario.emQuantoTempo + " sendo que essa pessoa possui "
-        + dadosPrimeiroFormulario.porTantasHoras + " de disponibilidade diaria para estudar, e tem à mão os recursos: " 
-        + dadosPrimeiroFormulario.recursosSelecionados + " e seu objetivo principal é " 
-        + dadosPrimeiroFormulario.paraAlcancar + ". Em relação ao aprendizado, "
-        + dadosPrimeiroFormulario.nomeUsuario + " aprende melhor do(s) jeito(s): "
-        + formasAprender + ", organiza melhor as ideias fazendo " 
-        + comoOrganizaIdeias.value + ", prefere lidar com problemas de forma " 
-        + comoLidaComProblemas.value + ". Recomende para essa pessoa, materiais de apoio de acordo com as melhores formas que ela tem de aprender. Sugira exercicios e revisoes da forma que ela prefere lidar com problemas."
-        + musica);
-
 
     return "Gere uma trilha e uma rotina de aprendizados para " 
     + dadosPrimeiroFormulario.nomeUsuario + ", que quer aprender " 
@@ -72,7 +59,7 @@ async function run() {
     const resultado = await model.generateContent(prompt);
     const response = await resultado.response;
     const texto = response.text();
-;
+    console.log(texto)
     localStorage.setItem('resultados', JSON.stringify(texto));
 }
 
