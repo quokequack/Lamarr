@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lamarr - Começando</title>
+    <title>Lamarr - Progredindo </title>
     <link rel="stylesheet" href="style-questionario.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -22,68 +22,58 @@
                     <h3> Questionário 2: Entendendo você</h3>
                 </div>
                 <div class="perguntas">
-                    <div class="pergunta1">
+                    <div class="pergunta1" >
                         <div class="conteudo-pergunta">
-                            <h3 class="titulo"> O que você quer aprender?</h3>
-                            <input type="text" id="resposta-texto">
+                            <h3 class="titulo"> Como você geralmente organiza suas ideias? </h3>
+                            <input name="organiza-ideias" type="radio" value="anotacoes" class="resposta-1">
+                            <label for="resposta-1"> Faço anotações </label>
+                            <input name="organiza-ideias" type="radio" value="mapas-mentais">
+                            <label for="resposta-1"> Faço mapas mentais </label>
+                            <input name="organiza-ideias" type="radio" value="cartoes-de-memoria" id="resposta-1">
+                            <label for="resposta-1"> Flashcards </label>
+                            <input name="organiza-ideias" type="radio" value="paginas-no-notion" id="resposta-1">
+                            <label for="resposta-1"> Crio páginas no Notion </label>
+                            <input name="organiza-ideias" type="radio" value="listas" id="resposta-1">
+                            <label for="resposta-1"> Faço listas </label>
                         </div>
                     </div>
                     <div class="pergunta1">
                         <div class="conteudo-pergunta">
-                            <h3 class="titulo"> Em quanto tempo? </h3>
-                            <input type="radio" id="resposta-1">
-                            <label for="resposta-1"> Menos de uma semana </label>
-                            <input type="radio" id="resposta-1">
-                            <label for="resposta-1"> Entre uma semana e um mês</label>
-                            <input type="radio" id="resposta-1">
-                            <label for="resposta-1"> Entre um mês e dois meses </label>
-                            <input type="radio" id="resposta-1">
-                            <label for="resposta-1"> O mais rápido possível </label>
-                            <input type="radio" id="resposta-1">
-                            <label for="resposta-1"> Sem tempo definido </label>
+                            <h3 class="titulo"> Você costuma ouvir músicas ao estudar?</h3>
+                            <input name="ouvir-musicas" value="sim" type="radio" id="resposta-1">
+                            <label for="resposta-1"> Sim </label>
+                            <input name="ouvir-musicas" value="nao" type="radio" id="resposta-1">
+                            <label for="resposta-1"> Não </label>
                         </div>
                     </div>
                     <div class="pergunta1">
                         <div class="conteudo-pergunta">
-                            <h3 class="titulo"> Por quantas horas diárias?</h3>
-                            <input type="radio" id="resposta-1">
-                            <label for="resposta-1"> Menos de 2h </label>
-                            <input type="radio" id="resposta-1">
-                            <label for="resposta-1"> Entre 2h e 4h</label>
-                            <input type="radio" id="resposta-1">
-                            <label for="resposta-1"> Entre 4h e 6h</label>
-                            <input type="radio" id="resposta-1">
-                            <label for="resposta-1"> Sem tempo definido</label>
-                            
-                        </div>
-                    </div>
-                    <div class="pergunta1">
-                        <div class="conteudo-pergunta">
-                            <h3 class="titulo"> Com quais recursos?</h3>
-                            <input type="radio" id="resposta-1">
-                            <label for="resposta-1"> Livros </label>
-                            <input type="radio" id="resposta-1">
-                            <label for="resposta-1"> Celular </label>
-                            <input type="radio" id="resposta-1">
-                            <label for="resposta-1"> Computador </label>
-                            <input type="radio" id="resposta-1">
-                            <label for="resposta-1"> Tablet </label>
-                            <input type="radio" id="resposta-1">
+                            <h3 class="titulo"> Como você diria que aprende melhor?</h3>
+                            <input name="aprende-melhor" value="lendo" type="checkbox" id="aprende-melhor-livros">
+                            <label for="resposta-1"> Lendo </label>
+                            <input name="aprende-melhor" value="ouvindo" type="checkbox" id="aprende-melhor-celular">
+                            <label for="resposta-1"> Ouvindo </label>
+                            <input name="aprende-melhor" value="assistindo" type="checkbox" id="aprende-melhor-computador">
+                            <label for="resposta-1"> Assistindo alguém fazer </label>
+                            <input name="aprende-melhor" value="fazendo" type="checkbox" id="aprende-melhor-tablet">
+                            <label for="resposta-1"> Fazendo </label>
+                            <input name="aprende-melhor" value="escrevendo" type="checkbox" id="aprende-melhor-outros">
+                            <label for="resposta-1"> Escrevendo </label>
+                            <input name="aprende-melhor" value="indefinido" type="checkbox" id="aprende-melhor-outros">
                             <label for="resposta-1"> Outros </label>
                         </div>
                     </div><div class="pergunta1">
                         <div class="conteudo-pergunta">
-                            <h3 class="titulo"> Para alcançar qual objetivo?</h3>
-                            <input type="radio" id="resposta-1">
-                            <label for="resposta-1">  Iniciar (nível iniciante) </label>
-                            <input type="radio" id="resposta-1">
-                            <label for="resposta-1"> Me aprofundar (nível intermediário) </label>
-                            <input type="radio" id="resposta-1">
-                            <label for="resposta-1"> Me especializar (nível avançado) </label>
-                            <input type="radio" id="resposta-1">
-                            <label for="resposta-1"> Saber mais (por diversão) </label>
-                            <input type="radio" id="resposta-1">
-                            <label for="resposta-1"> Não sei ainda </label>
+                            <h3 class="titulo"> Você prefere trabalhar em projetos que exijam: </h3>
+                            <input name="abordagem-problemas" value="logica" type="radio" id="resposta-1">
+                            <label for="resposta-1">  Lógica e análise de dados (estatísticas, gráficos e etc) </label>
+                            <input name="abordagem-problemas" value="criativa" type="radio" id="resposta-1">
+                            <label for="resposta-1"> Criatividade, pensar fora da caixa </label>
+                            <input name="abordagem-problemas" value="rapida" type="radio" id="resposta-1">
+                            <label for="resposta-1"> Ação rápida e resultados práticos (quizzes, competições) </label>
+                            <input name="abordagem-problemas" value="indefinido" type="radio" id="resposta-1">
+                            <label for="resposta-1"> Outros </label>
+                        
                         </div>
                     </div>
                 </div>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Lamarr - Resultados </title>
+    <link rel="stylesheet" href="resultado.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=SUSE:wght@100..800&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/92748b14b5.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+
+    
+    <div class="container">
+        <header>
+            <h1>LAMARR</h1>
+            <hr>
+        </header>
+        <main>
+            <div class="titulo">
+                Resultados
+            </div>
+            <div id="resultado"></div>
+            <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+            <script>
+            document.addEventListener('DOMContentLoaded', function()   {
+            const resultado = JSON.parse(localStorage.getItem('resultados'));
+            document.getElementById('resultado').innerHTML = marked.parse(resultado);
+        });
+    </script>
+        </main>
+    </div>
+</body>
+</html>

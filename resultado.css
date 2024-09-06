@@ -1,0 +1,14 @@
+.container{
+    font-family:"Suse";
+    min-height:100vh;
+    text-align:center;
+}
+.conteudo{
+    display:flex;
+    flex-direction: column;
+    margin-top:5%;
+}
+.resultado{
+    font-family:'Suse';
+    text-align:justify;
+}
