@@ -61,14 +61,26 @@ function geraPrompt(){
     + musica
 }
 
+function showLoadingModal() {
+    document.querySelector('#loading-modal').style.display = 'block';
+  }
+  
+  function hideLoadingModal() {
+    document.querySelector('#loading-modal').style.display = 'none';
+  }
+
 
 async function run() {
-    const prompt = geraPrompt();
-    const resultado = await model.generateContent(prompt);
-    const response = await resultado.response;
-    const texto = response.text();
-    localStorage.setItem('resultados', JSON.stringify(texto));
-    window.location.href = "./resultados.html";
+    showLoadingModal();
+    setTimeout(async () => {
+        const prompt = geraPrompt();
+        const resultado = await model.generateContent(prompt);
+        const response = await resultado.response;
+        const texto = response.text();
+        localStorage.setItem('resultados', JSON.stringify(texto));
+        hideLoadingModal();
+        window.location.href = "../../resultados/resultados.html";
+    }, 2000);
 }
 
 function validarFormulario() {

@@ -36,20 +36,26 @@ body{
 }
 .confetti {
     position: absolute;
-    top: 0;
-    font-size: 1.6rem;
-    animation: confetti-fall linear 5s infinite;
-}
-
-@keyframes confetti-fall {
+    top: 100%; 
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    animation: fall 3s ease-in-out infinite;
+  }
+  
+  @keyframes fall {
     0% {
-      transform: translateY(-100%) rotate(0);
+      top: 100%;
+      transform: scale(0);
+    }
+    50% {
+      transform: scale(1); 
     }
     100% {
-      transform: translateY(100vh) rotate(180deg);
+      top: 0;
+      transform: scale(0);
     }
-}
-
+  }
 
 
 #confetti-container {
@@ -60,7 +66,7 @@ body{
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 160h;
+    height: 100vh;
   }
 footer{
     background-color:#000;

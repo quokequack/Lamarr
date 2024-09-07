@@ -49,6 +49,6 @@ botaoEnviar.addEventListener('click', (event) => {
     event.preventDefault();
     getDados();
     if (validarFormulario()) {
-        window.location.href = "./questionario2.html";
+        window.location.href = "../questionario2/questionario2.html";
     }
 });
