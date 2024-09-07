@@ -67,5 +67,5 @@ const botaoEnviar = document.querySelector(".finalizar");
 botaoEnviar.addEventListener('click', (event) => {
     event.preventDefault();
     run();
-    // window.location.href = './resultados.html'
+    window.location.href = './resultados.html'
 });
