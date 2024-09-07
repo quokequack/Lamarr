@@ -1,6 +1,8 @@
 <div align="center">
   <img src="imgs/hedy.png"/>
 </div>
+<h2> Votação </h2>
+<p> Curtiu o projeto e está participando da imersão? <a href="https://discord.com/channels/1277631721822748742/1277631722716008535/1282016289501483170">Vote aqui e ajude uma pobre dev junior a ganhar uma bolsa na FIAP</p>
 <h1> Lamarr - Trilha de aprendizado em menos de 5 minutos </h1>
 <h3> O Lamarr foi idealizado principalmente para aqueles que têm vontade de aprender e pouco tempo para pensar em uma forma organizada de fazê-lo. Ao gerar uma trilha de conhecimento e uma rotina de estudos personalizados para você, respeitando seu tempo e melhores estilos de aprendizado, o Lamarr agiliza o processo de pesquisa por material e conteúdo para que você só se preocupe em estudar.
 </h3>
