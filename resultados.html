@@ -11,9 +11,6 @@
     <script src="https://kit.fontawesome.com/92748b14b5.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
-
-    
     <div class="container">
         <header>
             <h1>LAMARR</h1>
@@ -21,17 +18,42 @@
         </header>
         <main>
             <div class="titulo">
-                Resultados
+                Seus Resultados!
+                <hr class="linha">
             </div>
-            <div id="resultado"></div>
+            <p id="resultado">
+
+            </p>
+            <div id="confetti-container"></div>
             <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/3.0.1/purify.min.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/confetti-js@1.0.1/dist/index.min.js"></script>
             <script>
             document.addEventListener('DOMContentLoaded', function()   {
             const resultado = JSON.parse(localStorage.getItem('resultados'));
-            document.getElementById('resultado').innerHTML = resultado;
+            const resultadoLimpo = DOMPurify.sanitize(marked.parse(resultado))
+            document.querySelector('#resultado').innerHTML = resultadoLimpo;
+            const confettiContainer = document.querySelector('#confetti-container');
+            const showConfetti = () => {
+                const confetti = document.createElement('div');
+                confetti.textContent = '🎉';
+                confetti.classList.add('confetti');
+                confetti.style.left = Math.random() * innerWidth + 'px';
+                confettiContainer.appendChild(confetti);
+                setTimeout(() => {
+                    confetti.remove();
+                }, 5000);
+            };
+            setInterval(() => {
+                showConfetti();
+            }, 50);
+
         });
     </script>
         </main>
+        <footer>
+            <p> desenvolvido por alaquoke </p>
+        </footer>
     </div>
 </body>
 </html>

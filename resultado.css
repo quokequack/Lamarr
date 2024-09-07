@@ -1,3 +1,7 @@
+body{
+    background-color:#e8e7e2;
+}
+
 .container{
     font-family:"Suse";
     min-height:100vh;
@@ -6,9 +10,55 @@
 .conteudo{
     display:flex;
     flex-direction: column;
-    margin-top:5%;
 }
-.resultado{
+.titulo{
+    margin-top:2%;
+    font-size:2em;
+}
+.linha {
+    width:20%;
+}
+#resultado{
     font-family:'Suse';
     text-align:justify;
+    margin:12%;
+    margin-top:6%;
+
+}
+.confetti {
+    position: absolute;
+    top: 0;
+    font-size: 1.6rem;
+    animation: confetti-fall linear 5s infinite;
+}
+
+@keyframes confetti-fall {
+    0% {
+      transform: translateY(-100%) rotate(0);
+    }
+    100% {
+      transform: translateY(100vh) rotate(180deg);
+    }
+}
+
+
+
+#confetti-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+  }
+footer{
+    background-color:#000;
+    color:white;
+    position:fixed;
+    bottom:0;
+    left:0;
+    right:0;
+    text-align: center;
 }

@@ -59,7 +59,6 @@ async function run() {
     const resultado = await model.generateContent(prompt);
     const response = await resultado.response;
     const texto = response.text();
-    console.log(texto)
     localStorage.setItem('resultados', JSON.stringify(texto));
 }
 
