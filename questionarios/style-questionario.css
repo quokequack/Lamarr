@@ -21,6 +21,9 @@ body{
     margin-bottom:2%;
 
 }
+h3{
+    font-weight:normal
+}
 .pergunta1{
     margin-top:1%;
     width:50%;
@@ -39,11 +42,12 @@ body{
     cursor: pointer; 
 }
 .resposta-texto{
+    background-color:#e8e7e2;
     width:40%;
     padding:15px 20px;
     border:2px solid #000;
     font-size:1em;
-    border-radius:10px;
+    border-radius:60px;
     box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
     font-family:"Suse";
 

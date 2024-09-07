@@ -12,12 +12,20 @@ let gostaDeMusica;
 let comoAprendeMelhor;
 let comoLidaComProblemas;
 const formasAprender = [];
+const organizaIdeias = [];
 
 function getDados(){
     gostaDeMusica = document.querySelector('input[name="ouvir-musicas"]:checked');
     comoAprendeMelhor = document.querySelectorAll('input[name="aprende-melhor"]');
-    comoOrganizaIdeias = document.querySelector('input[name="organiza-ideias"]:checked');
+    comoOrganizaIdeias = document.querySelectorAll('input[name="organiza-ideias"]');
     comoLidaComProblemas = document.querySelector('input[name="abordagem-problemas"]:checked');
+
+    const arrayOrganizaIdeias = [...comoOrganizaIdeias];
+    arrayOrganizaIdeias.forEach(maneira => {
+        if (maneira.checked) {
+            organizaIdeias.push(maneira.value);
+        }
+    });
 
     const arrayFormas = [...comoAprendeMelhor];
     arrayFormas.forEach(forma => {
@@ -48,7 +56,7 @@ function geraPrompt(){
     + dadosPrimeiroFormulario.paraAlcancar + ". Em relação ao aprendizado, "
     + dadosPrimeiroFormulario.nomeUsuario + " aprende melhor do(s) jeito(s): "
     + formasAprender + ", organiza melhor as ideias fazendo " 
-    + comoOrganizaIdeias.value + ", prefere lidar com problemas de forma " 
+    + organizaIdeias + ", prefere lidar com problemas de forma " 
     + comoLidaComProblemas.value + ". Recomende para essa pessoa, materiais de apoio de acordo com as melhores formas que ela tem de aprender. Sugira exercicios e revisoes da forma que ela prefere lidar com problemas."
     + musica
 }
@@ -60,11 +68,22 @@ async function run() {
     const response = await resultado.response;
     const texto = response.text();
     localStorage.setItem('resultados', JSON.stringify(texto));
+    window.location.href = "./resultados.html";
+}
+
+function validarFormulario() {
+    if (!formasAprender.length === 0 || !organizaIdeias.length === 0 || !comoLidaComProblemas || !gostaDeMusica) {
+        alert("Por favor, responda a todas as perguntas antes de continuar.");
+        return false;
+    }
+    return true;
 }
 
 const botaoEnviar = document.querySelector(".finalizar");
 botaoEnviar.addEventListener('click', (event) => {
     event.preventDefault();
-    run();
-    window.location.href = './resultados.html'
+    getDados();
+    if (validarFormulario()) {
+        run();
+    }
 });

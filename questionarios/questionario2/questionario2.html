@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lamarr - Progredindo </title>
-    <link rel="stylesheet" href="style-questionario.css">
+    <link rel="stylesheet" href="../style-questionario.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=SUSE:wght@100..800&display=swap" rel="stylesheet">
@@ -25,15 +25,15 @@
                     <div class="pergunta1" >
                         <div class="conteudo-pergunta">
                             <h3 class="titulo"> Como você geralmente organiza suas ideias? </h3>
-                            <input name="organiza-ideias" type="radio" value="anotacoes" class="resposta-1">
-                            <label for="resposta-1"> Faço anotações </label>
-                            <input name="organiza-ideias" type="radio" value="mapas-mentais">
+                            <input name="organiza-ideias" value="anotacoes" type="checkbox" id="organiza-ideias-livros">
+                            <label for="resposta-1"> Com anotações simples </label>
+                            <input name="organiza-ideias" value="mapas-mentais" type="checkbox" id="organiza-ideias-celular">
                             <label for="resposta-1"> Faço mapas mentais </label>
-                            <input name="organiza-ideias" type="radio" value="cartoes-de-memoria" id="resposta-1">
+                            <input name="organiza-ideias" value="cartoes-de-memoria" type="checkbox" id="organiza-ideias-computador">
                             <label for="resposta-1"> Flashcards </label>
-                            <input name="organiza-ideias" type="radio" value="paginas-no-notion" id="resposta-1">
+                            <input name="organiza-ideias" value="paginas-no-notion" type="checkbox" id="organiza-ideias-tablet">
                             <label for="resposta-1"> Crio páginas no Notion </label>
-                            <input name="organiza-ideias" type="radio" value="listas" id="resposta-1">
+                            <input name="organiza-ideias" value="listas" type="checkbox" id="organiza-ideias-outros">
                             <label for="resposta-1"> Faço listas </label>
                         </div>
                     </div>
@@ -88,6 +88,6 @@
             <p> desenvolvido por alaquoke </p>
         </footer>
     </div>
-    <script type="module" src="dados.js"></script>
+    <script type="module" src="./script-questionario2.js"></script>
 </body>
 </html>

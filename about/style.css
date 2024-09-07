@@ -6,20 +6,45 @@ body{
     min-height:100vh;
     text-align:center;
 }
+.content{
+    display:flex;
+    flex-direction: row;
+    align-items: center; 
+}
+main{
+    display: flex;
+
+}
+.hedy img{
+    width:70%;
+}
+.hedy{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width:50%;
+}
+
+.hedy p {
+    width:70%;
+    text-align: center;
+    margin-top:2%; 
+}
 .conteudo{
     display:flex;
     flex-direction: column;
-    margin-top:5%;
+    width:50%;
 }
 .conteudos{
     display:flex;
+    align-items:center;
     justify-content:space-between;
+    flex-direction: column;
     margin:2%;
 }
 .about, .como-usar{
-    width:45%;
-    display: flex;
-    flex-direction:column
+    width:90%;
+
     
 }
 .titulo{

@@ -18,6 +18,15 @@ body{
 .linha {
     width:20%;
 }
+.refazer{
+    background-color:#000;
+    border-radius:50px;
+    padding:15px 30px;
+    width:50%;
+    color:#fff;
+    text-decoration: none;
+    cursor:pointer;
+}
 #resultado{
     font-family:'Suse';
     text-align:justify;
@@ -51,7 +60,7 @@ body{
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 100vh;
+    height: 160h;
   }
 footer{
     background-color:#000;

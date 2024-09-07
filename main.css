@@ -1,0 +1,90 @@
+body{
+    background-color:#000
+
+}
+
+.container{
+    font-family:"Suse";
+    min-height:60vh;
+    text-align:center;
+}
+main{
+    text-align:center;
+}
+.navbar{
+    color:#fff;
+}
+.navbar ul{
+    display:flex;
+    justify-content:space-between;
+    list-style:none;
+}
+.hedy img {
+    width: 20%;
+    position: absolute;
+    top: 32%; 
+    left: 50%; 
+    transform: translate(-50%, -50%); 
+    z-index: -1;
+}
+.textos{
+    font-size:3em;
+    position:relative;
+    z-index:3;
+    margin-top:15%;
+    color:#e8e7e2
+}
+.bem-vindos{
+    display:flex;
+    text-align:left;
+    margin-left:15%;
+}
+
+.lamarr{
+    text-align:right;
+    margin-right:20%;
+    margin-top:-5%;
+}
+p{
+    color:#e8e7e2;
+}
+.btn {
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  .comecar {
+    font-size:1.2em;
+    display: inline-block;
+    padding: 1% 5%;
+    background-color: #e8e7e2; 
+    color: #000;
+    text-decoration: none;
+    font-weight: bold;
+    border: none;
+    border-radius: 189px;
+    transition: transform 0.3s ease-in-out;
+    transform: translateY(-5px); 
+    animation: pulse 1s infinite; 
+  }
+
+  @keyframes pulse {
+    0% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-5px);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+footer{
+    background-color:#000;
+    color:#e8e7e2;
+    position:fixed;
+    bottom:0;
+    left:2%;
+    right:0;
+    text-align: left;
+}

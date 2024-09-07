@@ -1,4 +1,5 @@
 
+
 let nomeUsuario;
 let oqueAprender;
 let emQuantoTempo;
@@ -35,9 +36,19 @@ return localStorage.setItem("dadosPrimeiroFormulario", JSON.stringify(dadosPrime
 }
 
 
+function validarFormulario() {
+    if (!nomeUsuario || !oqueAprender || !emQuantoTempo || !porTantasHoras || !paraAlcancar || recursosSelecionados.length === 0) {
+        alert("Por favor, responda a todas as perguntas antes de continuar.");
+        return false;
+    }
+    return true;
+}
+
 const botaoEnviar = document.querySelector(".enviar");
 botaoEnviar.addEventListener('click', (event) => {
     event.preventDefault();
     getDados();
-    window.location.href = "./questionario2.html";
-})
+    if (validarFormulario()) {
+        window.location.href = "./questionario2.html";
+    }
+});
