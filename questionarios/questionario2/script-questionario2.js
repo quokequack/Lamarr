@@ -2,7 +2,7 @@
 import { GoogleGenerativeAI } from 'https://esm.run/@google/generative-ai';
 import { marked } from "https://cdn.jsdelivr.net/npm/marked/lib/marked.esm.js";
 
-const API_KEY = "AIzaSyC0nbdIIqwxQi8MRuIuy-mo-eQS_NKcR7M";
+const API_KEY = ${{ secrets.API_KEY_GEMINI }};
 const genAI = new GoogleGenerativeAI(API_KEY);
 const model = genAI.getGenerativeModel({model: "gemini-1.5-flash"});
 
