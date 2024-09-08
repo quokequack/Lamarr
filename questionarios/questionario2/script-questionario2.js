@@ -2,7 +2,19 @@
 import { GoogleGenerativeAI } from 'https://esm.run/@google/generative-ai';
 import { marked } from "https://cdn.jsdelivr.net/npm/marked/lib/marked.esm.js";
 
-const API_KEY = "AIzaSyC0nbdIIqwxQi8MRuIuy-mo-eQS_NKcR7M";
+var requirejs = require('requirejs');
+
+requirejs.config({
+    nodeRequire: require
+});
+
+requirejs(['foo', 'bar'],
+    function   (foo,   bar) {
+});
+
+require('dotenv').config();
+
+const API_KEY = process.env.API_KEY;
 const genAI = new GoogleGenerativeAI(API_KEY);
 const model = genAI.getGenerativeModel({model: "gemini-1.5-flash"});
 
