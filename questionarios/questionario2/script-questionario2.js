@@ -50,7 +50,7 @@ function getDados(){
 function getGostaDeMusica(){
     
     if(gostaDeMusica.value == "sim"){
-        return " Recomende playlists no spotify e/ou youtube de estudos para que a pessoa possa estudar ouvindo musica."
+        return "Recomende playlists no spotify e youtube de estudos para que a pessoa possa estudar ouvindo musica."
     }
     return "";
 }
