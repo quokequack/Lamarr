@@ -1,5 +1,9 @@
 export type SkillLevel = 'beginner' | 'intermediate' | 'advanced'
 
+export type CurrentSkillLevel = 'never' | 'exposed' | 'beginner' | 'frequent'
+
+export type ExpectedOutcome = 'beginner' | 'deepen' | 'specialize' | 'fun' | 'undecided'
+
 export type DurationUnit = 'days' | 'weeks' | 'months'
 
 export interface Duration {
@@ -83,7 +87,11 @@ export interface ObjectiveQuestionnaire {
   name: string
   email: string
   objective: LearningObjective
+  currentLevel: CurrentSkillLevel
+  expectedOutcome: ExpectedOutcome
   duration: Duration
+  startDate: string
+  studyDaysPerWeek: number
   dailyStudyHours: number
   availableResources: string[]
   preferences: Pick<LearningPreferences, 'format' | 'budget'>
@@ -92,9 +100,32 @@ export interface ObjectiveQuestionnaire {
 
 export interface PreferenceQuestionnaire {
   organizationMethod: string
+  organizationOther?: string
   listensToMusic: boolean
   musicType?: string
   methods: LearningMethod[]
+  methodOther?: string
   preferredPeriod: StudyPeriod
   projectPreference: string
+  projectOther?: string
+}
+
+export interface StudyAvailability {
+  startDate: string
+  endDate: string
+  studyDaysPerWeek: number
+  dailyStudyHours: number
+  totalStudyHours: number
+}
+
+export interface TrailGenerationInput {
+  learner: Pick<ObjectiveQuestionnaire, 'name' | 'email'>
+  objective: LearningObjective
+  currentLevel: CurrentSkillLevel
+  expectedOutcome: ExpectedOutcome
+  duration: Duration
+  availability: StudyAvailability
+  availableResources: string[]
+  learningPreferences: Pick<LearningPreferences, 'format' | 'budget'> & PreferenceQuestionnaire
+  previousAttempts: boolean
 }
