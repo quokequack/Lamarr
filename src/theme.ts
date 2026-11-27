@@ -15,7 +15,7 @@ export const vuetify = createVuetify({
           background: '#F4F3F1',
           surface: '#FFFFFF',
           primary: '#171615',
-          secondary: '#898481',
+          secondary: '#57514E',
           accent: '#D9D9D9',
           'on-background': '#171615',
           'on-surface': '#171615',

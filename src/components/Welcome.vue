@@ -1,14 +1,14 @@
 <template>
-  <section class="welcome">
+  <section id="top" class="welcome" aria-labelledby="welcome-title">
     <v-container class="welcome__content">
       <div class="welcome__copy">
         <p class="welcome__eyebrow">Aprender, com direção</p>
-        <h1>Uma trilha feita para o seu tempo.</h1>
+        <h1 id="welcome-title">Bem-vindos ao Lamarr</h1>
         <p class="welcome__summary">
-          O Lamarr organiza o que estudar e transforma seu objetivo em próximos passos claros.
+          Um ponto de partida para transformar o que você quer aprender em próximos passos claros.
         </p>
         <v-btn class="welcome__action" color="surface" size="large" to="/trilhas/nova">
-          COMEÇAR UMA TRILHA
+          Começar uma trilha
           <v-icon end icon="mdi-arrow-up-right" />
         </v-btn>
       </div>

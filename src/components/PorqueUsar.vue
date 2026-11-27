@@ -1,10 +1,13 @@
 <template>
-  <section id="porque-usar" class="porque-usar">
+  <section id="porque-usar" class="porque-usar" aria-labelledby="porque-usar-title">
     <v-container>
-      <p class="section-label">Por que usar?</p>
+      <p class="section-label section-label--spaced">Por que usar?</p>
       <div class="porque-usar__heading">
-        <h2>Para quem quer aprender sem perder o fio.</h2>
-        <p>O Lamarr tira a pesquisa do caminho para você voltar a se concentrar no estudo.</p>
+        <h2 id="porque-usar-title">Para quem quer aprender sem perder o fio.</h2>
+        <p>
+          O Lamarr ajuda a organizar o ponto de partida, respeitando o tempo e o jeito de cada
+          pessoa aprender.
+        </p>
       </div>
 
       <v-row class="porque-usar__reasons">
@@ -14,7 +17,7 @@
         </v-col>
         <v-col cols="12" md="6" class="reason">
           <v-icon icon="mdi-magnify-remove-outline" size="44" />
-          <span>Você quer encontrar boas fontes sem começar do zero.</span>
+          <span>Você quer encontrar um caminho sem começar do zero.</span>
         </v-col>
       </v-row>
 
@@ -51,16 +54,8 @@
 <style scoped>
 .porque-usar {
   background: rgb(var(--v-theme-accent));
+  color: var(--lamarr-ink);
   padding-block: clamp(4rem, 10vw, 8rem);
-}
-
-.section-label {
-  color: rgb(var(--v-theme-secondary));
-  font-size: 0.8rem;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  margin: 0 0 2rem;
-  text-transform: uppercase;
 }
 
 .porque-usar__heading {
@@ -80,7 +75,7 @@ h2 {
 }
 
 .porque-usar__heading p {
-  color: rgb(var(--v-theme-secondary));
+  color: var(--lamarr-muted-light);
   line-height: 1.6;
   margin: 0;
   max-width: 28rem;

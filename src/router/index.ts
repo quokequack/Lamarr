@@ -1,17 +1,10 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import PaginaNaoEcontrada from '../views/PaginaNaoEcontrada.vue'
 import Rotas from './Rotas'
 import { useSessionStore } from '../stores/session'
 
 const router = createRouter({
   history: createWebHistory(),
-  routes: [
-    {
-      path: '/:pathMatch(.*)*',
-      component: PaginaNaoEcontrada,
-    },
-    Rotas,
-  ],
+  routes: [Rotas],
 })
 
 router.beforeEach((to) => {

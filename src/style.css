@@ -2,6 +2,9 @@
   font-family: 'Lexend', system-ui, sans-serif;
   color: #171615;
   background: #f4f3f1;
+  --lamarr-ink: #171615;
+  --lamarr-muted-light: #57514e;
+  --lamarr-muted-dark: #c6c0bc;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -20,11 +23,42 @@ body {
   margin: 0;
   min-width: 320px;
   min-height: 100vh;
+  overflow-x: hidden;
 }
 
 button,
 a {
   -webkit-tap-highlight-color: transparent;
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 3px solid currentColor;
+  outline-offset: 4px;
+}
+
+.section-label {
+  color: var(--lamarr-muted-light);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+.section-label--dark {
+  color: var(--lamarr-muted-dark);
+}
+
+.section-label--spaced {
+  margin-bottom: 2rem;
+}
+
+section[id] {
+  scroll-margin-top: 5rem;
 }
 
 a {

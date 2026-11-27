@@ -1,23 +1,21 @@
 <template>
-  <v-container class="not-found">
-    <p class="section-label">Erro 404</p>
-    <h1>Página não encontrada.</h1>
-    <p>O endereço que você acessou não faz parte do caminho do Lamarr.</p>
-    <v-btn color="primary" to="/"> Voltar para o início </v-btn>
-  </v-container>
+  <main class="not-found">
+    <v-container>
+      <p class="section-label">Erro 404</p>
+      <h1>Página não encontrada.</h1>
+      <p>O endereço que você acessou não faz parte do caminho do Lamarr.</p>
+      <div class="not-found__actions">
+        <v-btn color="primary" to="/">Voltar para o início</v-btn>
+        <v-btn variant="text" to="/trilhas/nova">Começar uma trilha</v-btn>
+      </div>
+    </v-container>
+  </main>
 </template>
 
 <style scoped>
 .not-found {
+  min-height: 65vh;
   padding-block: 8rem;
-}
-
-.section-label {
-  color: rgb(var(--v-theme-secondary));
-  font-size: 0.8rem;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
 }
 
 h1 {
@@ -29,7 +27,13 @@ h1 {
 }
 
 .not-found p:not(.section-label) {
-  color: rgb(var(--v-theme-secondary));
+  color: var(--lamarr-muted-light);
   margin-bottom: 2rem;
+}
+
+.not-found__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
 }
 </style>

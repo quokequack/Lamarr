@@ -1,25 +1,31 @@
 <template>
-  <section id="como-usar" class="section-3">
+  <section id="como-usar" class="section-3" aria-labelledby="how-title">
     <v-container>
-      <p class="section-label">Como usar</p>
-      <h2>Do objetivo à próxima sessão.</h2>
+      <p class="section-label section-label--spaced">Como usar</p>
+      <h2 id="how-title">Do objetivo à próxima sessão.</h2>
       <v-row class="steps">
         <v-col cols="12" md="4">
           <span class="step-number">01</span>
           <h3>Conte o que quer aprender</h3>
-          <p>Seu objetivo é o ponto de partida da trilha.</p>
+          <p>Seu objetivo é o ponto de partida para o questionário.</p>
         </v-col>
         <v-col cols="12" md="4">
           <span class="step-number">02</span>
           <h3>Mostre como é sua rotina</h3>
-          <p>Tempo, nível e preferências orientam o caminho.</p>
+          <p>Tempo, nível e preferências ajudam a dar contexto ao caminho.</p>
         </v-col>
         <v-col cols="12" md="4">
           <span class="step-number">03</span>
           <h3>Estude um passo por vez</h3>
-          <p>Materiais e atividades formam uma sequência possível.</p>
+          <p>Suas respostas organizam uma sequência de estudo possível.</p>
         </v-col>
       </v-row>
+      <div class="steps__action">
+        <v-btn color="primary" size="large" to="/trilhas/nova">
+          Começar agora
+          <v-icon end icon="mdi-arrow-up-right" />
+        </v-btn>
+      </div>
     </v-container>
   </section>
 </template>
@@ -27,16 +33,8 @@
 <style scoped>
 .section-3 {
   background: rgb(var(--v-theme-surface));
+  color: var(--lamarr-ink);
   padding-block: clamp(4rem, 10vw, 8rem);
-}
-
-.section-label {
-  color: rgb(var(--v-theme-secondary));
-  font-size: 0.8rem;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  margin: 0 0 2rem;
-  text-transform: uppercase;
 }
 
 h2 {
@@ -58,7 +56,7 @@ h2 {
 }
 
 .step-number {
-  color: rgb(var(--v-theme-secondary));
+  color: var(--lamarr-muted-light);
   font-size: 0.8rem;
 }
 
@@ -71,8 +69,14 @@ h3 {
 }
 
 .steps p {
-  color: rgb(var(--v-theme-secondary));
+  color: var(--lamarr-muted-light);
   line-height: 1.5;
   max-width: 16rem;
+}
+
+.steps__action {
+  display: flex;
+  justify-content: center;
+  padding-top: 3rem;
 }
 </style>

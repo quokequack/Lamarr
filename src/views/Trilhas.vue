@@ -45,15 +45,6 @@ const trails = useTrailsStore()
   margin-bottom: 4rem;
 }
 
-.section-label {
-  color: rgb(var(--v-theme-secondary));
-  font-size: 0.8rem;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  margin: 0;
-  text-transform: uppercase;
-}
-
 h1 {
   font-size: clamp(3rem, 8vw, 7rem);
   letter-spacing: -0.08em;

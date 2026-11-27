@@ -1,40 +1,39 @@
 <template>
   <v-app-bar class="header" flat>
     <v-container class="header__content" fluid>
-      <router-link class="header__brand" to="/">Lamarr</router-link>
+      <router-link class="header__brand" to="/" aria-label="Lamarr, voltar para o início">
+        Lamarr
+      </router-link>
 
       <v-spacer />
 
       <nav class="desktop-navigation" aria-label="Navegação principal">
-        <a class="header__link" href="/#porque-usar">POR QUE USAR?</a>
-        <a class="header__link" href="/#como-usar">COMO USAR</a>
-        <a class="header__link" href="/#sobre">SOBRE</a>
-        <v-btn class="header__start" variant="text" to="/trilhas/nova"> COMEÇAR </v-btn>
+        <a class="header__link" href="/#porque-usar">Por que usar?</a>
+        <a class="header__link" href="/#como-usar">Como funciona</a>
+        <a class="header__link" href="/#sobre">Sobre</a>
+        <v-btn class="header__start" variant="text" to="/trilhas/nova">Começar</v-btn>
       </nav>
 
-      <v-menu
-        class="mobile-navigation"
-        location="bottom end"
-        :offset="8"
-        content-class="header-menu"
-      >
-        <template #activator="{ props }">
-          <v-btn
-            v-bind="props"
-            aria-label="Abrir menu"
-            class="mobile-navigation__toggle"
-            icon="mdi-dots-vertical"
-            variant="text"
-          />
-        </template>
+      <div class="mobile-navigation">
+        <v-menu location="bottom end" :offset="8" content-class="header-menu">
+          <template #activator="{ props }">
+            <v-btn
+              v-bind="props"
+              aria-label="Abrir menu"
+              class="mobile-navigation__toggle"
+              icon="mdi-menu"
+              variant="text"
+            />
+          </template>
 
-        <v-list bg-color="primary" class="header-menu__list">
-          <v-list-item href="/#porque-usar" title="POR QUE USAR?" />
-          <v-list-item href="/#como-usar" title="COMO USAR" />
-          <v-list-item href="/#sobre" title="SOBRE" />
-          <v-list-item class="header-menu__start" to="/trilhas/nova" title="COMEÇAR" />
-        </v-list>
-      </v-menu>
+          <v-list bg-color="primary" class="header-menu__list">
+            <v-list-item href="/#porque-usar" title="Por que usar?" />
+            <v-list-item href="/#como-usar" title="Como funciona" />
+            <v-list-item href="/#sobre" title="Sobre" />
+            <v-list-item class="header-menu__start" to="/trilhas/nova" title="COMEÇAR" />
+          </v-list>
+        </v-menu>
+      </div>
     </v-container>
   </v-app-bar>
 </template>
@@ -62,7 +61,7 @@
 }
 
 .header__brand {
-  font-size: 1.9rem;
+  font-size: 1.65rem;
   letter-spacing: -0.05em;
   line-height: 1;
 }
@@ -74,7 +73,8 @@
 }
 
 .header__link {
-  font-size: 0.85rem;
+  font-size: 0.82rem;
+  letter-spacing: 0.01em;
 }
 
 .header__link:hover,
@@ -86,6 +86,7 @@
 .header__start {
   margin-left: clamp(0.5rem, 2vw, 2rem);
   padding-inline: 0;
+  text-transform: none;
 }
 
 .mobile-navigation {
@@ -130,7 +131,7 @@
   }
 
   .header__brand {
-    font-size: 1.7rem;
+    font-size: 1.55rem;
   }
 }
 </style>

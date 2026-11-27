@@ -33,36 +33,35 @@ function saveObjective() {
 </script>
 
 <template>
-  <v-container class="new-trail-page">
-    <p class="section-label">Nova trilha</p>
-    <h1>Qual é o seu próximo objetivo?</h1>
-    <p class="new-trail-page__intro">
-      Esta primeira etapa guarda o objetivo para que o questionário completo possa continuar depois.
-    </p>
+  <main class="new-trail-page">
+    <v-container>
+      <p class="section-label">Nova trilha</p>
+      <h1 id="questionnaire-title">Qual é o seu próximo objetivo?</h1>
+      <p class="new-trail-page__intro">
+        Comece sem cadastro. Esta primeira etapa guarda seu objetivo para que o questionário possa
+        continuar depois.
+      </p>
 
-    <v-form class="objective-form" @submit.prevent="saveObjective">
-      <v-text-field v-model="topic" label="O que você quer aprender?" required />
-      <v-select v-model="level" :items="levelOptions" label="Qual é o seu nível?" />
-      <v-btn color="primary" type="submit" :disabled="!canSave"> Salvar objetivo </v-btn>
-      <v-alert v-if="saved" type="success" variant="tonal">
-        Objetivo salvo nesta sessão. O próximo passo será definir suas preferências.
-      </v-alert>
-    </v-form>
-  </v-container>
+      <v-form
+        aria-labelledby="questionnaire-title"
+        class="objective-form"
+        @submit.prevent="saveObjective"
+      >
+        <v-text-field v-model="topic" label="O que você quer aprender?" required />
+        <v-select v-model="level" :items="levelOptions" label="Qual é o seu nível?" />
+        <v-btn color="primary" type="submit" :disabled="!canSave"> Salvar objetivo </v-btn>
+        <v-alert v-if="saved" type="success" variant="tonal">
+          Objetivo salvo nesta sessão. O próximo passo será definir suas preferências.
+        </v-alert>
+      </v-form>
+    </v-container>
+  </main>
 </template>
 
 <style scoped>
 .new-trail-page {
   min-height: 70vh;
   padding-block: clamp(4rem, 10vw, 8rem);
-}
-
-.section-label {
-  color: rgb(var(--v-theme-secondary));
-  font-size: 0.8rem;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
 }
 
 h1 {
@@ -74,7 +73,7 @@ h1 {
 }
 
 .new-trail-page__intro {
-  color: rgb(var(--v-theme-secondary));
+  color: var(--lamarr-muted-light);
   line-height: 1.6;
   max-width: 36rem;
 }

@@ -26,8 +26,12 @@ const Rotas = {
     {
       path: 'trilhas/nova',
       name: 'nova-trilha',
-      meta: { requiresAuth: true },
       component: () => import('../views/NovaTrilha.vue'),
+    },
+    {
+      path: ':pathMatch(.*)*',
+      name: 'not-found',
+      component: () => import('../views/PaginaNaoEcontrada.vue'),
     },
   ],
 }
