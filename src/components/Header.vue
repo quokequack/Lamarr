@@ -1,103 +1,134 @@
-<script setup lang="ts">
-
-</script>
-
 <template>
-  <nav class="navbar navbar-expand-lg">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="#">Lamarr</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <v-icon icon="mdi-dots-vertical" color="#fff"></v-icon>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mb-2 mb-lg-0">
-          <li class="nav-item">
-            <a class="nav-link" href="#">POR QUE USAR?</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">COMO USAR</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">SOBRE</a>
-          </li>
-        </ul>
-        <span class="navbar-text">
-        COMEÇAR
-      </span>
-      </div>
-    </div>
-  </nav>
-<!--  <v-app-bar :elevation="0" class="header">-->
-<!--    <v-app-bar-title class="title">Lamarr</v-app-bar-title>-->
-<!--    <div class="spacer"></div>-->
-<!--    <div class="btns">-->
-<!--      <v-btn value="recent">-->
-<!--        <span>Por que usar?</span>-->
-<!--      </v-btn>-->
+  <v-app-bar class="header" flat>
+    <v-container class="header__content" fluid>
+      <a class="header__brand" href="#">Lamarr</a>
 
-<!--      <v-btn value="sobre" variant="text">-->
-<!--        <span>Sobre</span>-->
-<!--      </v-btn>-->
+      <v-spacer />
 
-<!--      <v-btn value="como usar">-->
-<!--        <span>Como usar</span>-->
-<!--      </v-btn>-->
-<!--    </div>-->
-<!--    <div class="spacer"></div>-->
-<!--    <v-btn class="comecar" value="comecar">-->
-<!--      <span>Começar</span>-->
-<!--    </v-btn>-->
-<!--  </v-app-bar>-->
+      <nav class="desktop-navigation" aria-label="Navegação principal">
+        <a class="header__link" href="#">POR QUE USAR?</a>
+        <a class="header__link" href="#">COMO USAR</a>
+        <a class="header__link" href="#">SOBRE</a>
+        <v-btn class="header__start" variant="text" href="#">COMEÇAR</v-btn>
+      </nav>
+
+      <v-menu
+        class="mobile-navigation"
+        location="bottom end"
+        :offset="8"
+        content-class="header-menu"
+      >
+        <template #activator="{ props }">
+          <v-btn
+            v-bind="props"
+            aria-label="Abrir menu"
+            class="mobile-navigation__toggle"
+            icon="mdi-dots-vertical"
+            variant="text"
+          />
+        </template>
+
+        <v-list bg-color="#000" class="header-menu__list">
+          <v-list-item href="#" title="POR QUE USAR?" />
+          <v-list-item href="#" title="COMO USAR" />
+          <v-list-item href="#" title="SOBRE" />
+          <v-list-item class="header-menu__start" href="#" title="COMEÇAR" />
+        </v-list>
+      </v-menu>
+    </v-container>
+  </v-app-bar>
 </template>
 
 <style scoped>
-.v-app-bar {
-  width: 100% !important;
-  max-width: 100% !important;
-  margin: 0 !important;
-  padding: 0 !important;
-  box-sizing: border-box;
-}
-.navbar{
-  background-color: #000;
-}
-.navbar-brand {
+.header {
+  background-color: #000 !important;
   color: #fff;
-  text-align: left;
-  font-weight: bolder;
-  font-size: 1.9em;
-  margin-left: 2%;
-}
-.navbar-nav > li {
-  font-family: "Lexend", sans-serif;
 }
 
-.nav-link, .navbar-text{
-  color: white;
-}
-.navbar-toggler{
-  border-color: transparent;
-}
-
-.collapse {
-  justify-content: center;
+.header__content {
+  display: flex;
   align-items: center;
   width: 100%;
-  position: relative;
+  max-width: none;
+  padding: 0 clamp(1rem, 4vw, 2.5rem);
 }
 
-.navbar-text {
-  position: absolute;
-  right: 0;
-  margin-right: 2rem;
-  font-weight: bolder;
+.header__brand {
+  color: #fff;
+  font-size: 1.9rem;
+  font-weight: 800;
+  line-height: 1;
+  text-decoration: none;
 }
 
-.navbar-nav {
+.desktop-navigation {
   display: flex;
-  justify-content: center;
   align-items: center;
-  width: auto;
-  gap: 1.5rem;
+  gap: clamp(1rem, 4vw, 3.5rem);
+}
+
+.header__link,
+.header__start {
+  color: #fff !important;
+  font-family: "Lexend", sans-serif;
+  font-weight: 700;
+  letter-spacing: 0;
+  text-decoration: none;
+}
+
+.header__link {
+  font-size: 0.9rem;
+}
+
+.header__start {
+  margin-left: clamp(0.5rem, 2vw, 2rem);
+  padding-inline: 0;
+}
+
+.mobile-navigation {
+  display: none;
+}
+
+.mobile-navigation__toggle {
+  color: #fff;
+}
+
+:deep(.header-menu) {
+  border-radius: 4px;
+}
+
+:deep(.header-menu__list) {
+  min-width: 220px;
+  padding: 0.5rem 0;
+}
+
+:deep(.header-menu__list .v-list-item) {
+  color: #fff;
+  min-height: 44px;
+}
+
+:deep(.header-menu__list .v-list-item-title) {
+  font-family: "Lexend", sans-serif;
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+:deep(.header-menu__start) {
+  border-top: 1px solid rgba(255, 255, 255, 0.25);
+  margin-top: 0.25rem;
+}
+
+@media (max-width: 768px) {
+  .desktop-navigation {
+    display: none;
+  }
+
+  .mobile-navigation {
+    display: block;
+  }
+
+  .header__brand {
+    font-size: 1.7rem;
+  }
 }
 </style>
