@@ -58,3 +58,21 @@ test('keeps the start action aligned inside the mobile menu', async ({ page }) =
     `mobile menu: ${menuBox.width}x${menuBox.height}; start action: ${startActionBox.width}x${startActionBox.height}`,
   )
 })
+
+test('shows arrows around the why use title on desktop', async ({ page }) => {
+  await page.setViewportSize({ width: 1440, height: 900 })
+  await page.goto('/')
+
+  const arrows = page.locator('.porque-usar__arrow')
+
+  await expect(arrows).toHaveCount(2)
+  await expect(arrows.nth(0)).toBeVisible()
+  await expect(arrows.nth(1)).toBeVisible()
+
+  const evidenceDirectory = process.env.EVIDENCE_DIR
+  if (evidenceDirectory) {
+    await page.locator('.porque-usar').screenshot({
+      path: path.join(evidenceDirectory, 'porque-usar-desktop.png'),
+    })
+  }
+})

@@ -17,7 +17,19 @@
         </v-col>
       </v-row>
       <div class="container texto">
+        <v-icon
+          aria-hidden="true"
+          class="porque-usar__arrow porque-usar__arrow--left"
+          icon="mdi-arrow-u-up-right"
+          size="50"
+        />
         <h1> O LAMARR É PERFEITO PARA VOCÊ</h1>
+        <v-icon
+          aria-hidden="true"
+          class="porque-usar__arrow porque-usar__arrow--right"
+          icon="mdi-arrow-u-down-left"
+          size="50"
+        />
       </div>
       <v-row>
         <v-col cols="12" md="6" class="motivos">
@@ -69,10 +81,26 @@ p{
 }
 
 .texto {
+  position: relative;
   width: 100%;
   max-width: 600px;
   margin: 0 auto;
   text-align: center;
+}
+
+.porque-usar__arrow {
+  position: absolute;
+  color: #fff;
+}
+
+.porque-usar__arrow--left {
+  left: -10%;
+  top: 85%;
+}
+
+.porque-usar__arrow--right {
+  right: -10%;
+  top: -10%;
 }
 
 .texto h1{
@@ -96,6 +124,11 @@ span{
     margin-top: 10%;
     margin-bottom: 10%;
   }
+
+  .porque-usar__arrow {
+    display: none;
+  }
+
   .texto h1 {
     font-size: 2.3em;
     text-align: center;
