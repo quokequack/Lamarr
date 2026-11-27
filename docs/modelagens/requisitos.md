@@ -120,7 +120,7 @@ Sem ordem de prioridade ou importância:
     - Código limpo e modular
     - Refatoração constante
     - Usar SOLID
-    - Dashboard no Firebase para gerenciamento de requisições
+    - Firebase Authentication, Firestore e Cloud Functions para autenticação, persistência e chamadas de IA no backend
 - **Portabilidade:**
     - Funcionar em todos os navegadores (Chrome, Firefox, Safari, Opera, Edge)
 - **Escalabilidade:**
@@ -130,3 +130,7 @@ Sem ordem de prioridade ou importância:
 - **Internacionalização:**
     - Considerar estrutura para outros idiomas no futuro (mesmo que agora só use português)
     - Estrutura do front-end e dos prompts da API preparada para múltiplos idiomas (i18n)
+
+## Decisão de arquitetura
+
+O backend escolhido para a primeira versão persistente é Firebase (Authentication, Firestore, Cloud Functions e Hosting). A referência a MongoDB no backlog #10 fica substituída por esta decisão; qualquer retorno ao MongoDB exige uma nova decisão arquitetural antes da implementação da persistência. Consulte `docs/arquitetura.md`.

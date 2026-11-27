@@ -42,9 +42,7 @@ test('keeps the start action aligned inside the mobile menu', async ({ page }) =
   }
 
   expect(startActionBox.x).toBeGreaterThanOrEqual(menuBox.x)
-  expect(startActionBox.x + startActionBox.width).toBeLessThanOrEqual(
-    menuBox.x + menuBox.width,
-  )
+  expect(startActionBox.x + startActionBox.width).toBeLessThanOrEqual(menuBox.x + menuBox.width)
   expect(consoleErrors).toEqual([])
 
   const evidenceDirectory = process.env.EVIDENCE_DIR
@@ -63,6 +61,9 @@ test('shows arrows around the why use title on desktop', async ({ page }) => {
   await page.setViewportSize({ width: 1440, height: 900 })
   await page.goto('/')
 
+  await expect(page.locator('html')).toHaveAttribute('lang', 'pt-BR')
+  await expect(page.locator('link[rel="icon"]')).toHaveAttribute('href', '/imgs/logo.ico')
+
   const arrows = page.locator('.porque-usar__arrow')
 
   await expect(arrows).toHaveCount(2)
@@ -73,6 +74,35 @@ test('shows arrows around the why use title on desktop', async ({ page }) => {
   if (evidenceDirectory) {
     await page.locator('.porque-usar').screenshot({
       path: path.join(evidenceDirectory, 'porque-usar-desktop.png'),
+    })
+  }
+})
+
+test('redirects unauthenticated users from the trail area to login', async ({ page }) => {
+  await page.goto('/trilhas')
+
+  await expect(page).toHaveURL(/\/login\?redirect=\/trilhas$/)
+  await expect(page.getByRole('heading', { name: 'Suas trilhas, no seu ritmo.' })).toBeVisible()
+
+  const evidenceDirectory = process.env.EVIDENCE_DIR
+  if (evidenceDirectory) {
+    await page.screenshot({ path: path.join(evidenceDirectory, 'login-guard.png'), fullPage: true })
+  }
+})
+
+test('renders the cadastro page with the shared auth layout', async ({ page }) => {
+  await page.goto('/cadastro')
+
+  await expect(
+    page.getByRole('heading', { name: 'Comece guardando seu próximo passo.' }),
+  ).toBeVisible()
+  await expect(page.getByRole('link', { name: 'Já tenho cadastro' })).toBeVisible()
+
+  const evidenceDirectory = process.env.EVIDENCE_DIR
+  if (evidenceDirectory) {
+    await page.screenshot({
+      path: path.join(evidenceDirectory, 'cadastro-layout.png'),
+      fullPage: true,
     })
   }
 })

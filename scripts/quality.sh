@@ -16,18 +16,15 @@ concurrent_result_directory=""
 concurrent_gate_pids=()
 
 format() {
-  # Put the format command for this project here.
-  printf '%s\n' "SKIP  not configured"
+  npm run format:check
 }
 
 vet() {
-  # Put the vet command for this project here.
-  printf '%s\n' "SKIP  not configured"
+  npm run typecheck
 }
 
 style() {
-  # Put the style command for this project here.
-  printf '%s\n' "SKIP  not configured"
+  npm run lint
 }
 
 complexity() {
@@ -41,8 +38,7 @@ coverage() {
 }
 
 tests() {
-  # Put the tests command for this project here.
-  printf '%s\n' "SKIP  not configured"
+  npm run test:unit
 }
 
 architecture() {

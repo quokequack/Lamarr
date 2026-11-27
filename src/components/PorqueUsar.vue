@@ -1,29 +1,31 @@
-<script setup lang="ts" xmlns:div="http://www.w3.org/1999/html">
-
-</script>
-
 <template>
-  <v-container fluid class="porque-usar">
-    <div class="box">
-      <p> Você...</p>
-      <v-row>
-        <v-col cols="12" md="6" class="motivos">
-          <v-icon icon="mdi-weather-lightning" size="50"></v-icon>
-          <span> é uma pessoa desorganizada? </span>
+  <section id="porque-usar" class="porque-usar">
+    <v-container>
+      <p class="section-label">Por que usar?</p>
+      <div class="porque-usar__heading">
+        <h2>Para quem quer aprender sem perder o fio.</h2>
+        <p>O Lamarr tira a pesquisa do caminho para você voltar a se concentrar no estudo.</p>
+      </div>
+
+      <v-row class="porque-usar__reasons">
+        <v-col cols="12" md="6" class="reason">
+          <v-icon icon="mdi-weather-lightning" size="44" />
+          <span>Você tem pouco tempo para organizar o que estudar.</span>
         </v-col>
-        <v-col cols="12" md="6" class="motivos">
-          <v-icon icon="mdi-magnify-remove-outline" size="60"></v-icon>
-          <span> não sabe pesquisar boas fontes de estudos? </span>
+        <v-col cols="12" md="6" class="reason">
+          <v-icon icon="mdi-magnify-remove-outline" size="44" />
+          <span>Você quer encontrar boas fontes sem começar do zero.</span>
         </v-col>
       </v-row>
-      <div class="container texto">
+
+      <div class="porque-usar__promise">
         <v-icon
           aria-hidden="true"
           class="porque-usar__arrow porque-usar__arrow--left"
           icon="mdi-arrow-u-up-right"
           size="50"
         />
-        <h1> O LAMARR É PERFEITO PARA VOCÊ</h1>
+        <h2>O Lamarr é feito para você começar.</h2>
         <v-icon
           aria-hidden="true"
           class="porque-usar__arrow porque-usar__arrow--right"
@@ -31,115 +33,121 @@
           size="50"
         />
       </div>
-      <v-row>
-        <v-col cols="12" md="6" class="motivos">
-          <v-icon icon="mdi-alarm" size="50"></v-icon>
-          <span> trabalha e estuda e não tem tempo de nada? </span>
+
+      <v-row class="porque-usar__reasons">
+        <v-col cols="12" md="6" class="reason">
+          <v-icon icon="mdi-alarm" size="44" />
+          <span>Você precisa de uma rotina que respeite o seu dia.</span>
         </v-col>
-        <v-col cols="12" md="6" class="motivos">
-          <v-icon icon="mdi-file-document-remove-outline" size="50"></v-icon>
-          <span> já tentou e tentou mas não sabe como se organizar para estudar? </span>
+        <v-col cols="12" md="6" class="reason">
+          <v-icon icon="mdi-file-document-remove-outline" size="44" />
+          <span>Você já tentou estudar e quer um próximo passo claro.</span>
         </v-col>
       </v-row>
-    </div>
-  </v-container>
+    </v-container>
+  </section>
 </template>
 
 <style scoped>
-* {
-  box-sizing: border-box;
+.porque-usar {
+  background: rgb(var(--v-theme-accent));
+  padding-block: clamp(4rem, 10vw, 8rem);
 }
-.porque-usar{
-  height: auto;
-  width: 100%;
+
+.section-label {
+  color: rgb(var(--v-theme-secondary));
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  margin: 0 0 2rem;
+  text-transform: uppercase;
+}
+
+.porque-usar__heading {
+  align-items: end;
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: minmax(0, 1fr) minmax(220px, 0.45fr);
+  margin-bottom: 5rem;
+}
+
+h2 {
+  font-size: clamp(2rem, 5vw, 4.5rem);
+  letter-spacing: -0.07em;
+  line-height: 0.95;
+  margin: 0;
+  max-width: 10ch;
+}
+
+.porque-usar__heading p {
+  color: rgb(var(--v-theme-secondary));
+  line-height: 1.6;
+  margin: 0;
+  max-width: 28rem;
+}
+
+.porque-usar__reasons {
+  border-top: 1px solid rgba(23, 22, 21, 0.3);
+  margin: 0;
+}
+
+.reason {
+  align-items: flex-start;
+  border-bottom: 1px solid rgba(23, 22, 21, 0.3);
   display: flex;
-  justify-content:center;
-  align-items: center;
-  background-color:#d9d9d9;
-  padding:0;
-  margin:0;
+  gap: 1rem;
+  min-height: 10rem;
+  padding: 2rem 1rem 2rem 0;
 }
 
-.box{
-  width: 100%;
-  padding:0;
-  margin:0;
+.reason span {
+  font-size: clamp(1.1rem, 2vw, 1.5rem);
+  line-height: 1.35;
+  max-width: 18rem;
 }
 
-p{
-  font-size: 2em;
-  font-weight: bolder;
-  color: #898481;
-  margin-top:1%;
-}
-
-.motivos {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-
-}
-
-.texto {
+.porque-usar__promise {
+  margin: 6rem auto;
+  max-width: 680px;
   position: relative;
-  width: 100%;
-  max-width: 600px;
-  margin: 0 auto;
   text-align: center;
 }
 
+.porque-usar__promise h2 {
+  margin: 0 auto;
+  max-width: 10ch;
+}
+
 .porque-usar__arrow {
+  color: rgb(var(--v-theme-surface));
   position: absolute;
-  color: #fff;
 }
 
 .porque-usar__arrow--left {
   left: -10%;
-  top: 85%;
+  top: 70%;
 }
 
 .porque-usar__arrow--right {
   right: -10%;
-  top: -10%;
+  top: -15%;
 }
 
-.texto h1{
-  font-weight: bolder;
-}
+@media (max-width: 700px) {
+  .porque-usar__heading {
+    display: block;
+  }
 
-span{
-  color: #898481;
-  font-size:1.3em;
-  width: 30%;
-  text-align: center;
-}
+  .porque-usar__heading p {
+    margin-top: 1.5rem;
+  }
 
-.v-row {
-  margin:0;
-}
-
-@media (max-width: 768px) {
-  .texto {
-    width: 90%;
-    margin-top: 10%;
-    margin-bottom: 10%;
+  .porque-usar__promise {
+    margin-block: 4rem;
   }
 
   .porque-usar__arrow {
     display: none;
   }
-
-  .texto h1 {
-    font-size: 2.3em;
-    text-align: center;
-
-  }
-
-  span {
-    width: 50%;
-    font-size: 1.1em;
-  }
 }
-
-
 </style>

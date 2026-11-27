@@ -1,15 +1,15 @@
 <template>
   <v-app-bar class="header" flat>
     <v-container class="header__content" fluid>
-      <a class="header__brand" href="#">Lamarr</a>
+      <router-link class="header__brand" to="/">Lamarr</router-link>
 
       <v-spacer />
 
       <nav class="desktop-navigation" aria-label="Navegação principal">
-        <a class="header__link" href="#">POR QUE USAR?</a>
-        <a class="header__link" href="#">COMO USAR</a>
-        <a class="header__link" href="#">SOBRE</a>
-        <v-btn class="header__start" variant="text" href="#">COMEÇAR</v-btn>
+        <a class="header__link" href="/#porque-usar">POR QUE USAR?</a>
+        <a class="header__link" href="/#como-usar">COMO USAR</a>
+        <a class="header__link" href="/#sobre">SOBRE</a>
+        <v-btn class="header__start" variant="text" to="/trilhas/nova"> COMEÇAR </v-btn>
       </nav>
 
       <v-menu
@@ -28,11 +28,11 @@
           />
         </template>
 
-        <v-list bg-color="#000" class="header-menu__list">
-          <v-list-item href="#" title="POR QUE USAR?" />
-          <v-list-item href="#" title="COMO USAR" />
-          <v-list-item href="#" title="SOBRE" />
-          <v-list-item class="header-menu__start" href="#" title="COMEÇAR" />
+        <v-list bg-color="primary" class="header-menu__list">
+          <v-list-item href="/#porque-usar" title="POR QUE USAR?" />
+          <v-list-item href="/#como-usar" title="COMO USAR" />
+          <v-list-item href="/#sobre" title="SOBRE" />
+          <v-list-item class="header-menu__start" to="/trilhas/nova" title="COMEÇAR" />
         </v-list>
       </v-menu>
     </v-container>
@@ -41,8 +41,8 @@
 
 <style scoped>
 .header {
-  background-color: #000 !important;
-  color: #fff;
+  background-color: rgb(var(--v-theme-primary)) !important;
+  color: rgb(var(--v-theme-surface));
 }
 
 .header__content {
@@ -53,12 +53,18 @@
   padding: 0 clamp(1rem, 4vw, 2.5rem);
 }
 
-.header__brand {
-  color: #fff;
-  font-size: 1.9rem;
-  font-weight: 800;
-  line-height: 1;
+.header__brand,
+.header__link,
+.header__start {
+  color: rgb(var(--v-theme-surface)) !important;
+  font-weight: 700;
   text-decoration: none;
+}
+
+.header__brand {
+  font-size: 1.9rem;
+  letter-spacing: -0.05em;
+  line-height: 1;
 }
 
 .desktop-navigation {
@@ -67,17 +73,14 @@
   gap: clamp(1rem, 4vw, 3.5rem);
 }
 
-.header__link,
-.header__start {
-  color: #fff !important;
-  font-family: "Lexend", sans-serif;
-  font-weight: 700;
-  letter-spacing: 0;
-  text-decoration: none;
+.header__link {
+  font-size: 0.85rem;
 }
 
-.header__link {
-  font-size: 0.9rem;
+.header__link:hover,
+.header__link:focus-visible {
+  text-decoration: underline;
+  text-underline-offset: 0.3rem;
 }
 
 .header__start {
@@ -90,11 +93,11 @@
 }
 
 .mobile-navigation__toggle {
-  color: #fff;
+  color: rgb(var(--v-theme-surface));
 }
 
 :deep(.header-menu) {
-  border-radius: 4px;
+  border-radius: 0;
 }
 
 :deep(.header-menu__list) {
@@ -103,13 +106,12 @@
 }
 
 :deep(.header-menu__list .v-list-item) {
-  color: #fff;
+  color: rgb(var(--v-theme-surface));
   min-height: 44px;
 }
 
 :deep(.header-menu__list .v-list-item-title) {
-  font-family: "Lexend", sans-serif;
-  font-size: 0.9rem;
+  font-size: 0.85rem;
   font-weight: 700;
 }
 
